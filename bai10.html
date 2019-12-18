@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Từ 0 kV đến 10kV<br>Giá:3000 vnd/1kV<br><br>
+    Trên 10kV đến 50kV<br>Giá:2000 vnd/1kv<br><br>
+    Trên 50kV<br>Giá: 1000 vnd/1kV<br><br>
+    Nhập số kV:<br> 
+    <input type="number" id="num" min="0">
+    <button type="button" onclick="math()">Tính Giá Điện</button>
+    <div id="result"></div>
+    <script>
+        function math(){
+            let num=parseInt(document.getElementById("num").value);
+            if(num >= 0 && num <= 10){
+                let sum=num*3000;
+                document.getElementById("result").innerHTML=sum + " VND";
+            }
+            else if(num > 10 && num <= 50){
+                let sum=10*3000+(num-10)*2000;
+                document.getElementById("result").innerHTML=sum+" VND";
+            }
+            else if(num > 50){
+                let sum =10*3000+40*2000+(num-50)*1000;
+                document.getElementById("result").innerHTML=sum +" VND";
+            }
+            else{
+                document.getElementById("result").innerHTML="nhập sai";
+            }               
+        }
+    </script>
+</body>
+</html>

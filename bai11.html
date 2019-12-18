@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Từ 0 đến 5 triệu<br>Thuế:5%<br><br>
+    Trên 5 đến 10 triệu<br>Thuế:10%<br><br>
+    Trên 10 đến 15 triệu<br>Thuế:15%<br><br>
+    Trên 15 triệu<br>Thuế:20%<br><br>
+    Nhập số tiền thu nhập (VND):<br> 
+    <input type="number" id="num" min="0">
+    <button type="button" onclick="math()">Tính Thuế</button>
+    <div id="result"></div>
+    <script>
+        function math(){
+            let num=parseInt(document.getElementById("num").value);
+            if(num >= 0 && num <= 5000000){
+                let sum=num*0.05;
+                document.getElementById("result").innerHTML="Tiền Thuế: "+sum + " VND";
+            }
+            else if(num > 5000000 && num <= 10000000){
+                let sum=250000 +(num-5000000)*0.1;
+                document.getElementById("result").innerHTML="Tiền Thuế: "+sum+ " VND";
+            }
+            else if(num > 10000000 && num <= 15000000){
+                let sum =750000 +(num-10000000)*0.15;
+                document.getElementById("result").innerHTML="Tiền Thuế: "+sum+ " VND";
+            }
+            else if(num > 15000000){
+                let sum=1500000 +(num-15000000)*0.2;
+                document.getElementById("result").innerHTML="Tiền Thuế: "+sum+ " VND";
+            }
+            else{
+                document.getElementById("result").innerHTML="nhập sai";
+            }               
+        }
+    </script>
+</body>
+</html>

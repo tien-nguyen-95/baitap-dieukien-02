@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a= parseInt(prompt("phương trình ax+b=0 \n nhập hệ số a: "));
+        let b= parseInt(prompt("phương trình ax+b=0 \n nhập hệ số b: "));
+        if(Number.isInteger(a) && Number.isInteger(b))
+        {
+            if(a==0 && b==0){
+                alert("phương trình vô số nghiệm");
+            }
+            else if(a==0 && b!=0){
+                alert("phương trình vô nghiệm");
+            }
+            else{
+                alert("phương trình có nghiệm: x = " +-b/a);
+            }
+        }
+        else{
+            alert("nhập sai");
+        }
+    </script>
+</body>
+</html>
